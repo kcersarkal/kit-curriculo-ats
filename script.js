@@ -37,6 +37,23 @@ function applySiteConfig() {
     return url + separator + currentParams.substring(1);
   }
 
+  // Preço de lançamento: depois da data, o preço exibido volta ao normal
+  // e os avisos de lançamento somem.
+  const product = config.product || {};
+  const launchEnd = product.launchEndsAt ? new Date(product.launchEndsAt) : null;
+  const launchActive = Boolean(launchEnd && product.regularPrice && Date.now() < launchEnd.getTime());
+  if (!launchActive && product.regularPrice) {
+    product.salePrice = product.regularPrice;
+  }
+  document.querySelectorAll("[data-launch-only]").forEach(el => {
+    el.hidden = !launchActive;
+  });
+  if (launchActive) {
+    const dateText = launchEnd.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", timeZone: "America/Sao_Paulo" });
+    document.querySelectorAll("[data-launch-date]").forEach(el => { el.textContent = dateText; });
+    startLaunchCountdown(launchEnd);
+  }
+
   // Preenche textos simples marcados com data-config
   document.querySelectorAll("[data-config]").forEach(el => {
     const key = el.getAttribute("data-config");
@@ -78,6 +95,32 @@ function applySiteConfig() {
       btn.setAttribute("rel", "noopener");
     }
   });
+}
+
+/**
+ * Contagem regressiva até o fim do preço de lançamento.
+ * Quando chega a zero, recarrega a página para mostrar o preço normal.
+ */
+function startLaunchCountdown(endDate) {
+  const els = document.querySelectorAll("[data-countdown]");
+  if (!els.length) return;
+  const pad = n => String(n).padStart(2, "0");
+
+  function tick() {
+    const left = endDate.getTime() - Date.now();
+    if (left <= 0) {
+      clearInterval(timer);
+      window.location.reload();
+      return;
+    }
+    const s = Math.floor(left / 1000);
+    const d = Math.floor(s / 86400);
+    const text = (d > 0 ? d + "d " : "") + pad(Math.floor(s % 86400 / 3600)) + "h " + pad(Math.floor(s % 3600 / 60)) + "m " + pad(s % 60) + "s";
+    els.forEach(el => { el.textContent = text; });
+  }
+
+  const timer = setInterval(tick, 1000);
+  tick();
 }
 
 function getNestedValue(obj, path) {

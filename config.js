@@ -12,7 +12,15 @@ const SITE_CONFIG = {
 
   product: {
     name: "Kit Currículo ATS",
-    salePrice: "R$ 39,90",
+    // Preço de lançamento, cobrado até launchEndsAt.
+    salePrice: "R$ 27,90",
+
+    // Preço normal. Depois de launchEndsAt o site passa a mostrar só este preço.
+    // Lembre de mudar o preço na Cakto para este valor na mesma data.
+    regularPrice: "R$ 39,90",
+
+    // Fim do preço de lançamento (horário de Brasília). Deixe "" para desligar a promoção.
+    launchEndsAt: "2026-10-23T23:59:59-03:00",
 
     // Link do checkout do produto principal na Kiwify (ou Cakto).
     // O order bump de R$ 14,90 é configurado dentro da própria Kiwify.

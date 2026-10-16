@@ -1817,3 +1817,46 @@ button:focus-visible {
     font-size: 0.96rem;
   }
 }
+
+/* ==========================================================================
+   PREÇO DE LANÇAMENTO
+   ========================================================================== */
+[hidden] {
+  display: none !important;
+}
+
+.launch-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  border: 1px solid var(--accent-gold-glow);
+  border-radius: var(--radius-md);
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.launch-strip s {
+  color: var(--text-muted);
+}
+
+.launch-strip strong {
+  color: var(--accent-gold);
+}
+
+.launch-timer {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.launch-timer strong {
+  color: var(--accent-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.launch-timer--card {
+  margin-top: 10px;
+}
