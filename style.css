@@ -1860,3 +1860,8 @@ button:focus-visible {
 .launch-timer--card {
   margin-top: 10px;
 }
+
+.launch-strip s,
+.launch-strip strong {
+  white-space: nowrap;
+}
