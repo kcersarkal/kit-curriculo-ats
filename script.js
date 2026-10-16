@@ -46,6 +46,12 @@ function applySiteConfig() {
     }
   });
 
+  // Preço por modelo (salePrice dividido pelos 10 modelos)
+  document.querySelectorAll("[data-price-per-model]").forEach(el => {
+    const n = parsePrice(config.product && config.product.salePrice);
+    if (n) el.textContent = "R$ " + (n / 10).toFixed(2).replace(".", ",");
+  });
+
   // Preenche links de checkout
   document.querySelectorAll("[data-checkout-btn]").forEach(btn => {
     btn.setAttribute("href", appendUtm(config.product.checkoutUrl));
