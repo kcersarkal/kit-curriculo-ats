@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Confirmado - Acesso Liberado</title>
+  <meta name="description" content="Sua compra foi confirmada com sucesso. Veja como acessar o seu material agora.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#090D16">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-glow-wrapper">
+
+  <!-- CANVAS DE CONFETES DE CELEBRAÇÃO -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <main class="container thank-you-main">
+
+    <div class="thank-you-card">
+
+      <!-- ÍCONE DE SUCESSO -->
+      <div class="celebration-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <div class="badge-pill">
+        PEDIDO CONFIRMADO COM SUCESSO
+      </div>
+
+      <h1 class="hero-title hero-title--sm">
+        Parabéns! O seu acesso já foi liberado
+      </h1>
+
+      <p class="hero-subtitle">
+        Seu Kit Currículo ATS já está disponível. Enviamos os dados de acesso para o e-mail informado na compra.
+      </p>
+
+      <!-- PASSO A PASSO PARA ACESSAR -->
+      <ol class="access-steps">
+        <li class="step-card">
+          <div class="step-badge">1</div>
+          <div class="step-card-text">
+            <h2>Abra o seu e-mail</h2>
+            <p>Procure a mensagem da plataforma de pagamento (Kiwify) com o acesso ao <strong>Kit Currículo ATS</strong>.</p>
+          </div>
+        </li>
+
+        <li class="step-card">
+          <div class="step-badge">2</div>
+          <div class="step-card-text">
+            <h2>Verifique também a pasta de Spam ou Promoções</h2>
+            <p>Caso não localize na caixa de entrada principal em até 3 minutos, confira a caixa de lixo eletrônico.</p>
+          </div>
+        </li>
+
+        <li class="step-card">
+          <div class="step-badge">3</div>
+          <div class="step-card-text">
+            <h2>Baixe os modelos e edite o seu</h2>
+            <p>Abra o modelo em Word ou faça uma cópia no Google Docs (Arquivo &gt; Fazer uma cópia), troque os textos e salve em PDF para enviar.</p>
+          </div>
+        </li>
+      </ol>
+
+      <!-- BOTÕES DE AÇÃO (ACESSO CAKTO & E-MAIL) -->
+      <div class="cta-button-wrapper">
+        <a href="#" class="btn-cta" data-members-btn id="access-materials-btn">
+          <span>ACESSAR MEUS MATERIAIS AGORA</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <p class="support-note">
+          Dúvidas sobre seu acesso? Entre em contato pelo e-mail:<br>
+          <a href="#" data-support-email>suporte@seudominio.com</a>
+        </p>
+      </div>
+
+      <!-- RESUMO DA GARANTIA -->
+      <p class="thank-you-guarantee">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg><span>Sua compra conta com <strong>7 dias de garantia incondicional</strong> a partir de hoje. Guarde o e-mail de confirmação para consultas futuras.</span>
+      </p>
+
+    </div>
+
+  </main>
+
+  <!-- RODAPÉ SIMPLES -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span class="current-year">2026</span> <span data-config="product.name">Kit Currículo ATS</span>. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
