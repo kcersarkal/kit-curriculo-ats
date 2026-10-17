@@ -38,7 +38,7 @@ const SITE_CONFIG = {
 
   // Dados que aparecem nos Termos e na Política de Privacidade
   legal: {
-    ownerName: "Seu Nome Completo ou Razão Social",
+    ownerName: "Julio Souza",
     document: "" // CPF ou CNPJ (opcional; hoje não aparece no site)
   }
 };
