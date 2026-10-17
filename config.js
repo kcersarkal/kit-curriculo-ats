@@ -39,7 +39,7 @@ const SITE_CONFIG = {
   // Dados que aparecem nos Termos e na Política de Privacidade
   legal: {
     ownerName: "Seu Nome Completo ou Razão Social",
-    document: "CPF ou CNPJ: 00.000.000/0000-00"
+    document: "" // CPF ou CNPJ (opcional; hoje não aparece no site)
   }
 };
 
