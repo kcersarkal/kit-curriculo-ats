@@ -129,7 +129,7 @@ function getNestedValue(obj, path) {
 
 /**
  * Pixel da Meta
- * A compra (Purchase) é registrada pela Kiwify, que tem o mesmo Pixel configurado.
+ * A compra (Purchase) é registrada pela Cakto, que tem o mesmo Pixel configurado.
  * Aqui medimos a página: PageView, ViewContent e InitiateCheckout no clique do botão.
  */
 function initMetaPixel() {

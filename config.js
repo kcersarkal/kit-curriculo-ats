@@ -22,9 +22,9 @@ const SITE_CONFIG = {
     // Fim do preço de lançamento (horário de Brasília). Deixe "" para desligar a promoção.
     launchEndsAt: "2026-10-23T23:59:59-03:00",
 
-    // Link do checkout do produto principal na Kiwify (ou Cakto).
-    // O order bump de R$ 14,90 é configurado dentro da própria Kiwify.
-    checkoutUrl: "https://pay.kiwify.com.br/SEU-LINK",
+    // Link do checkout do produto principal na Cakto.
+    // O order bump de R$ 14,90 (scripts do LinkedIn) é configurado dentro da Cakto.
+    checkoutUrl: "https://pay.cakto.com.br/mofs5mf",
 
     // Garantia incondicional (em dias), obrigatória pelo CDC (Art. 49)
     guaranteeDays: 7
@@ -33,7 +33,7 @@ const SITE_CONFIG = {
   // Suporte 100% automático por e-mail (sem WhatsApp)
   support: {
     email: "suporte@seudominio.com",
-    membersAreaUrl: "https://dashboard.kiwify.com.br" // área de membros da Kiwify
+    membersAreaUrl: "https://aluno.cakto.com.br/auth/login" // área do comprador na Cakto
   },
 
   // Dados que aparecem nos Termos e na Política de Privacidade
