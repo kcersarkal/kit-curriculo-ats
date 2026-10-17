@@ -32,7 +32,7 @@ const SITE_CONFIG = {
 
   // Suporte 100% automático por e-mail (sem WhatsApp)
   support: {
-    email: "suporte@seudominio.com",
+    email: "prime.contatos.negocios@gmail.com",
     membersAreaUrl: "https://aluno.cakto.com.br/auth/login" // área do comprador na Cakto
   },
 

@@ -77,7 +77,7 @@ function applySiteConfig() {
   // Preenche botões de E-mail de Suporte
   document.querySelectorAll("[data-support-email]").forEach(btn => {
     if (config.support && config.support.email) {
-      btn.setAttribute("href", `mailto:${config.support.email}?subject=Dúvida%20sobre%20o%20Método`);
+      btn.setAttribute("href", `mailto:${config.support.email}?subject=Dúvida%20sobre%20o%20Kit%20Currículo%20ATS`);
       btn.textContent = config.support.email;
     }
   });
