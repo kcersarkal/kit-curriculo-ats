@@ -8,7 +8,7 @@
 const SITE_CONFIG = {
   // Pixel da Meta (Gerenciador de Eventos > Conectar dados > Web).
   // Cole só o número do ID. Deixe vazio ("") para desligar.
-  metaPixelId: "",
+  metaPixelId: "2119939941945793",
 
   product: {
     name: "Kit Currículo ATS",
