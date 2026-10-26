@@ -71,7 +71,8 @@ function applySiteConfig() {
 
   // Preenche links de checkout
   document.querySelectorAll("[data-checkout-btn]").forEach(btn => {
-    btn.setAttribute("href", appendUtm(config.product.checkoutUrl));
+    const url = launchActive && product.launchCheckoutUrl ? product.launchCheckoutUrl : product.checkoutUrl;
+    btn.setAttribute("href", appendUtm(url));
   });
 
   // Preenche botões de E-mail de Suporte

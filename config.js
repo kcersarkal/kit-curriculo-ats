@@ -16,15 +16,17 @@ const SITE_CONFIG = {
     salePrice: "R$ 27,90",
 
     // Preço normal. Depois de launchEndsAt o site passa a mostrar só este preço.
-    // Lembre de mudar o preço na Cakto para este valor na mesma data.
     regularPrice: "R$ 39,90",
 
     // Fim do preço de lançamento (horário de Brasília). Deixe "" para desligar a promoção.
     launchEndsAt: "2026-10-31T23:59:59-03:00",
 
-    // Link do checkout do produto principal na Cakto.
+    // Links do checkout na Cakto: cada oferta tem o seu preço.
+    // Até launchEndsAt os botões usam launchCheckoutUrl (oferta de R$ 27,90);
+    // depois, checkoutUrl (oferta de R$ 39,90). A troca é automática.
     // O order bump de R$ 14,90 (scripts do LinkedIn) é configurado dentro da Cakto.
-    checkoutUrl: "https://pay.cakto.com.br/mofs5mf",
+    launchCheckoutUrl: "https://pay.cakto.com.br/mofs5mf",
+    checkoutUrl: "https://pay.cakto.com.br/ru957qu",
 
     // Garantia incondicional (em dias), obrigatória pelo CDC (Art. 49)
     guaranteeDays: 7
