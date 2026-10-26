@@ -20,7 +20,7 @@ const SITE_CONFIG = {
     regularPrice: "R$ 39,90",
 
     // Fim do preço de lançamento (horário de Brasília). Deixe "" para desligar a promoção.
-    launchEndsAt: "2026-10-23T23:59:59-03:00",
+    launchEndsAt: "2026-10-31T23:59:59-03:00",
 
     // Link do checkout do produto principal na Cakto.
     // O order bump de R$ 14,90 (scripts do LinkedIn) é configurado dentro da Cakto.
