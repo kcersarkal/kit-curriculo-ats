@@ -60,13 +60,16 @@
   // Identifica o endpoint do servidor de rastreamento
   function getEndpoint() {
     try {
+      if (window.SITE_CONFIG && window.SITE_CONFIG.trackerUrl) return window.SITE_CONFIG.trackerUrl;
+      if (window.TRACKER_ENDPOINT) return window.TRACKER_ENDPOINT;
       var current = document.currentScript;
       if (current && current.src) {
         var base = current.src.split('?')[0];
-        return base.replace(/\/server\/track\.js$|\/tracker\.js$/, '') + '/api/track/click';
+        var resolved = base.replace(/\/server\/track\.js$|\/tracker\.js$/, '') + '/api/track/click';
+        if (!resolved.includes(window.location.hostname)) return resolved;
       }
     } catch (e) {}
-    return '/api/track/click';
+    return 'http://207.180.246.115:3333/api/track/click';
   }
 
   // Utilitários de Cookies
