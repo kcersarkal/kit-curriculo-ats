@@ -279,3 +279,74 @@ function initConfettiCelebration() {
 
   animate();
 }
+
+/**
+ * ====================================================================
+ * ANIMAÇÕES MODERNAS E SCROLL REVEAL (ESTILO SAAS ENTERPRISE)
+ * ====================================================================
+ */
+function initScrollAnimations() {
+  if (!('IntersectionObserver' in window)) return;
+
+  const revealTargets = document.querySelectorAll(
+    '.section-header, .pain-card, .model-card, .model-item, .bonus-card, .faq-item, .ats-col, .objection-killer-card, .guarantee-box, .pricing-card'
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealTargets.forEach((el, index) => {
+    el.classList.add('reveal-on-scroll');
+    // Stagger para cards dentro do mesmo grid
+    const parentGrid = el.closest('.pain-grid, .models-grid, .faq-grid, .objection-grid');
+    if (parentGrid) {
+      const siblings = Array.from(parentGrid.children);
+      const idx = siblings.indexOf(el);
+      if (idx > 0) {
+        el.style.transitionDelay = (idx * 60) + 'ms';
+      }
+    }
+    observer.observe(el);
+  });
+}
+
+/**
+ * Efeito Dinâmico de Scanner ATS no Comparativo Visual
+ */
+function initAtsScannerEffect() {
+  const goodPaper = document.querySelector('.ats-col--good .ats-paper');
+  if (!goodPaper) return;
+
+  if (!goodPaper.querySelector('.ats-scanner-beam')) {
+    const beam = document.createElement('div');
+    beam.className = 'ats-scanner-beam';
+    goodPaper.appendChild(beam);
+  }
+
+  const badPaper = document.querySelector('.ats-col--bad .ats-paper');
+  if (badPaper && !badPaper.querySelector('.ats-scanner-beam-error')) {
+    const beamErr = document.createElement('div');
+    beamErr.className = 'ats-scanner-beam-error';
+    badPaper.appendChild(beamErr);
+  }
+}
+
+// Inicia as animações assim que o DOM estiver pronto
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initScrollAnimations();
+    initAtsScannerEffect();
+  });
+} else {
+  initScrollAnimations();
+  initAtsScannerEffect();
+}
