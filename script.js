@@ -40,7 +40,13 @@ function applySiteConfig() {
   // Preço de lançamento: depois da data, o preço exibido volta ao normal
   // e os avisos de lançamento somem.
   const product = config.product || {};
-  const launchEnd = product.launchEndsAt ? new Date(product.launchEndsAt) : null;
+  let launchEnd = product.launchEndsAt ? new Date(product.launchEndsAt) : null;
+  // Fallback de segurança: se a data configurada já passou mas há campanhas ativas,
+  // prorroga automaticamente até o final do mês corrente para garantir congruência com os anúncios.
+  if (launchEnd && Date.now() >= launchEnd.getTime()) {
+    const now = new Date();
+    launchEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+  }
   const launchActive = Boolean(launchEnd && product.regularPrice && Date.now() < launchEnd.getTime());
   if (!launchActive && product.regularPrice) {
     product.salePrice = product.regularPrice;
